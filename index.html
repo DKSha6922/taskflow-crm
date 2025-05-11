@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Project CRM - A comprehensive customer relationship management system for tracking projects, tasks, and team collaboration."
+    />
+    <meta
+      name="keywords"
+      content="CRM, project management, task tracking, team collaboration, productivity tool"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="Mohammed Shafi" />
+    <link rel="canonical" href="https://yourdomain.com/project-crm" />
+    <title>Project CRM - Task and Project Management System</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="main_container" role="banner">
+      <!-- sidebar section  -->
+      <section
+        id="sidebar_section"
+        class="sidebar_section"
+        aria-label="Navigation sidebar"
+      >
+        <aside class="sidebar_progress_section">
+          <!-- project CRM with Symbols -->
+          <div class="logo_section">
+            <button class="exit_btn">
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <h1>Project CRM</h1>
+          </div>
+
+          <!-- all project list -->
+          <ul
+            id="all_project_list"
+            role="navigation"
+            aria-label="Project categories"
+          >
+            <li id="lists" class="lists">
+              <div class="dropdown_list">
+                <p>All Projects</p>
+                <i
+                  id="nav_list_btn"
+                  class="fa-solid fa-chevron-down"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <ul id="list_nested" class="list_nested dropdown_nested">
+                <div class="list_nested_1">
+                  <span>
+                    <button
+                      id="add_task_btn"
+                      class="btn"
+                      aria-label="Add new project"
+                    >
+                      <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    </button>
+                  </span>
+                  <div class="add_task"></div>
+                </div>
+              </ul>
+            </li>
+            <li id="lists" class="lists">
+              <div class="dropdown_list">
+                <i class="no_bg fa-solid fa-toggle-off" aria-hidden="true"></i>
+                Not Started
+                <i
+                  id="nav_list_btn"
+                  class="fa-solid fa-chevron-down"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <ul id="list_nested" class="list_nested dropdown_nested">
+                <div class="list_nested_1">
+                  <span>
+                    <button
+                      id="add_task_btn"
+                      class="btn"
+                      aria-label="Add new project"
+                    >
+                      <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    </button>
+                  </span>
+                  <div class="add_task"></div>
+                </div>
+              </ul>
+            </li>
+            <li id="lists" class="lists">
+              <div class="dropdown_list">
+                <i class="no_bg fa-solid fa-toggle-on" aria-hidden="true"></i>In
+                Progress
+                <i
+                  id="nav_list_btn"
+                  class="fa-solid fa-chevron-down"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <ul id="list_nested" class="list_nested dropdown_nested">
+                <div class="list_nested_1">
+                  <span>
+                    <button
+                      id="add_task_btn"
+                      class="btn"
+                      aria-label="Add new project"
+                    >
+                      <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    </button>
+                  </span>
+                  <div class="add_task"></div>
+                </div>
+              </ul>
+            </li>
+            <li id="lists" class="lists">
+              <div class="dropdown_list">
+                <i
+                  class="no_bg fa-solid fa-arrow-trend-down"
+                  aria-hidden="true"
+                ></i
+                >Nearing Deadline
+                <i
+                  id="nav_list_btn"
+                  class="fa-solid fa-chevron-down"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <ul id="list_nested" class="list_nested dropdown_nested">
+                <div class="list_nested_1">
+                  <span>
+                    <button
+                      id="add_task_btn"
+                      class="btn"
+                      aria-label="Add new project"
+                    >
+                      <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    </button>
+                  </span>
+                  <div class="add_task"></div>
+                </div>
+              </ul>
+            </li>
+            <li id="lists" class="lists">
+              <div class="dropdown_list">
+                <i
+                  class="no_bg fa-regular fa-circle-check"
+                  aria-hidden="true"
+                ></i
+                >Complete
+                <i
+                  id="nav_list_btn"
+                  class="fa-solid fa-chevron-down"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <ul id="list_nested" class="list_nested dropdown_nested">
+                <div class="list_nested_1">
+                  <span>
+                    <button
+                      id="add_task_btn"
+                      class="btn"
+                      aria-label="Add new project"
+                    >
+                      <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    </button>
+                  </span>
+                  <div class="add_task"></div>
+                </div>
+              </ul>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- button of create new project -->
+        <button
+          id="create_project_button"
+          class="project_btn"
+          aria-label="Create new project"
+        >
+          <i class="fa-solid fa-plus" aria-hidden="true"></i>Create New
+          Project<i class="fa-solid fa-box" aria-hidden="true"></i>
+        </button>
+      </section>
+
+      <!-- main section -->
+      <main role="main">
+        <!-- search bar -->
+        <div class="searchbar_main_section">
+          <div class="searchbar_section">
+            <label for="crm-search" class="sr-only">Search in CRM</label>
+            <input
+              type="search"
+              id="crm-search"
+              placeholder="Search in CRM"
+              aria-label="Search projects and tasks"
+            />
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          </div>
+          <button
+            id="nav_btn"
+            class="list_btn nav_btn"
+            aria-label="Change view mode"
+          >
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <!-- Toggle tasks button -->
+        <nav class="togles_main_section" aria-label="Main navigation">
+          <button aria-current="page">
+            <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>General
+          </button>
+          <button>
+            <i class="fa-solid fa-list-check" aria-hidden="true"></i>Tasks
+          </button>
+          <button>
+            <i class="fa-solid fa-file-invoice" aria-hidden="true"></i>Invoice &
+            Documents
+          </button>
+        </nav>
+
+        <hr />
+
+        <!-- progress display -->
+        <section class="display_main_section" aria-label="Project statistics">
+          <div class="display_text">
+            <span class="icon one"
+              ><i class="fa-regular fa-clock" aria-hidden="true"></i
+            ></span>
+            <span class="title">Total Time</span>
+            <div class="dispaly_time">
+              <span class="time_title">03:09</span>
+              <span class="total_time_title">1h:43min</span>
+            </div>
+          </div>
+          <div class="display_text">
+            <span class="icon two"
+              ><i class="fa-solid fa-dollar-sign" aria-hidden="true"></i
+            ></span>
+            <span class="title">Total Earnings</span>
+            <div class="dispaly_time">
+              <span class="time_title">1.695.00</span>
+              <span class="total_time_title">17.345.00</span>
+            </div>
+          </div>
+          <div class="display_text">
+            <span class="icon three"
+              ><i class="fa-solid fa-percent" aria-hidden="true"></i
+            ></span>
+            <span class="title">Project Progress</span>
+            <div class="dispaly_time">
+              <span class="time_title">34%</span>
+              <span class="total_time_title">0.000100</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Task List section -->
+        <section class="task_list_section" aria-label="Task list">
+          <!-- Task list header -->
+          <header class="task_list_header_section">
+            <div class="task_list_withbtn">
+              <h2>Task List</h2>
+              <button class="btn" aria-label="Add new task">
+                <i class="fa-solid fa-plus" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="img_section">
+              <img
+                class="img_1"
+                src="public/img/avatar1.jpg"
+                alt="Team member avatar 1"
+                width="40"
+                height="40"
+              />
+              <img
+                class="img_1"
+                src="public/img/avatar2.jpg"
+                alt="Team member avatar 2"
+                width="40"
+                height="40"
+              />
+              <img
+                class="img_1"
+                src="public/img/avatar3.jpg"
+                alt="Team member avatar 3"
+                width="40"
+                height="40"
+              />
+              <img
+                class="img_1"
+                src="public/img/avatar4.jpg"
+                alt="Team member avatar 4"
+                width="40"
+                height="40"
+              />
+            </div>
+            <p>200 Elements</p>
+            <!-- <button class="list_btn" aria-label="Change view mode">
+              <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button> -->
+          </header>
+
+          <!-- Task list items -->
+          <article class="task_list" aria-labelledby="task1">
+            <div class="task_list_desc">
+              <input type="radio" name="task-select" id="task1" />
+              <h3 id="task1">Request server username & password</h3>
+            </div>
+            <div class="task_list_img">
+              <p class="task-status">In progress</p>
+              <time datetime="PT2H54M">02:54</time>
+              <img
+                class="img_1"
+                src="public/img/avatar1.jpg"
+                alt="Task assignee avatar"
+                width="40"
+                height="40"
+              />
+              <button class="list_btn" aria-label="Task options">
+                <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="task_list" aria-labelledby="task2">
+            <div class="task_list_desc">
+              <input type="radio" name="task-select" id="task2" />
+              <h3 id="task2">Configure database settings</h3>
+            </div>
+
+            <div class="task_list_img">
+              <p class="task-status">In progress</p>
+              <time datetime="PT2H54M">02:54</time>
+              <img
+                class="img_1"
+                src="public/img/avatar1.jpg"
+                alt="Task assignee avatar"
+                width="40"
+                height="40"
+              />
+              <button class="list_btn" aria-label="Task options">
+                <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="task_list" aria-labelledby="task3">
+            <div class="task_list_desc">
+              <input type="radio" name="task-select" id="task3" />
+              <h3 id="task3">Implement user authentication</h3>
+            </div>
+
+            <div class="task_list_img">
+              <p class="task-status">In progress</p>
+              <time datetime="PT2H54M">02:54</time>
+              <img
+                class="img_1"
+                src="public/img/avatar1.jpg"
+                alt="Task assignee avatar"
+                width="40"
+                height="40"
+              />
+              <button class="list_btn" aria-label="Task options">
+                <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="task_list" aria-labelledby="task4">
+            <div class="task_list_desc">
+              <input type="radio" name="task-select" id="task4" />
+              <h3 id="task4">Design dashboard interface</h3>
+            </div>
+
+            <div class="task_list_img">
+              <p class="task-status">In progress</p>
+              <time datetime="PT2H54M">02:54</time>
+              <img
+                class="img_1"
+                src="public/img/avatar1.jpg"
+                alt="Task assignee avatar"
+                width="40"
+                height="40"
+              />
+              <button class="list_btn" aria-label="Task options">
+                <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="task_list" aria-labelledby="task5">
+            <div class="task_list_desc">
+              <input type="radio" name="task-select" id="task5" />
+              <h3 id="task5">Write API documentation</h3>
+            </div>
+
+            <div class="task_list_img">
+              <p class="task-status">In progress</p>
+              <time datetime="PT2H54M">02:54</time>
+              <img
+                class="img_1"
+                src="public/img/avatar1.jpg"
+                alt="Task assignee avatar"
+                width="40"
+                height="40"
+              />
+              <button class="list_btn" aria-label="Task options">
+                <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+              </button>
+            </div>
+          </article>
+        </section>
+
+        <hr />
+      </main>
+
+      <!-- Task description -->
+      <aside class="task_section" aria-label="Task details">
+        <div class="task_section_1">
+          <section class="user_timer">
+            <button class="btn" aria-label="Pause timer">
+              <i class="fa-solid fa-pause" aria-hidden="true"></i>
+            </button>
+            <span>01:34</span>
+
+            <section class="user_details">
+              <div class="profile">
+                <img
+                  src="./public/img/avatar3.jpg"
+                  alt="Kolin Francis profile picture"
+                  width="40"
+                  height="40"
+                />
+                <div>
+                  <p>User</p>
+                  <h5>Kolin Francis</h5>
+                </div>
+              </div>
+              <button>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </section>
+          </section>
+
+          <section class="User_time_tracking">
+            <h5>Time Tracking</h5>
+            <button>
+              Hide Window<i
+                class="fa-solid fa-chevron-right"
+                aria-hidden="true"
+              ></i>
+            </button>
+          </section>
+
+          <section class="time_tracking_display">
+            <span>Tracking Time</span>
+            <div class="task_display">
+              <p class="task_num">Task:#32</p>
+              <p class="task_name">Create project page with all tabs</p>
+              <time class="task_timer">01:34</time>
+            </div>
+            <div class="task-btn">
+              <button>
+                <i class="btn fa-solid fa-pause" aria-hidden="true"></i>Pause
+              </button>
+              <button class="btn-2">
+                Completed<i
+                  class="btn fa-solid fa-check"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </div>
+          </section>
+
+          <section class="user_task_section">
+            <div class="User_task_Description">
+              <h5>Task description</h5>
+              <button class="list_btn" aria-label="Task description options">
+                <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="user_detail">
+              <div class="user1">
+                <img
+                  src="/public/img/avatar4.jpg"
+                  alt="Team member profile picture"
+                  width="40"
+                  height="40"
+                />
+
+                <div>
+                  <p>User</p>
+                  <h6>Kolin Francis</h6>
+                </div>
+              </div>
+              <div class="user2 user1">
+                <div>
+                  <p>User</p>
+                  <h6>Kolin Francis</h6>
+                </div>
+                <img
+                  src="public/img/avatar3.jpg"
+                  alt="Team member profile picture"
+                  width="40"
+                  height="40"
+                />
+              </div>
+            </div>
+            <div class="progress_container">
+              <div class="progress_bar">
+                <div class="progress_priority">
+                  <button>
+                    In Progress<i
+                      class="fa-solid fa-chevron-down"
+                      aria-hidden="true"
+                    ></i>
+                  </button>
+                  <p>
+                    <i class="fa-solid fa-circle" aria-hidden="true"></i>Normal
+                    Priority
+                  </p>
+                </div>
+                <p class="progress_description">
+                  Create project page with bootstrap 12 grid, you can use our
+                  project
+                </p>
+                <img
+                  src="public/img/Description_img.jpg"
+                  alt="Project page wireframe"
+                />
+              </div>
+              <button class="progress_attach_btn">
+                <i class="fa-solid fa-paperclip" aria-hidden="true"></i>Attach
+                file
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <section class="task_updates">
+          <div>
+            <p>
+              Created
+              <time datetime="2024-07-28T08:23">28 July 2024 at 8:23 am</time>
+            </p>
+            <p>
+              Updated
+              <time datetime="2024-07-29T11:30">29 July 2024 at 11:30 am</time>
+            </p>
+          </div>
+          <button>Delete task</button>
+        </section>
+      </aside>
+    </header>
+
+    <!-- footer of project CRM -->
+    <footer role="contentinfo">
+      <p>
+        &copy; 2025
+        <a href="https://github.com/DKSha6922" rel="author noopener">
+          Mohammed Shafi <i class="fa-brands fa-github" aria-hidden="true"></i>
+        </a>
+      </p>
+    </footer>
+    <!-- Structured data for better search results -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Project CRM",
+        "description": "A comprehensive customer relationship management system for tracking projects, tasks, and team collaboration.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web"
+      }
+    </script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
