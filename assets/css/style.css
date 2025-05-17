@@ -99,6 +99,7 @@ hr {
   box-shadow: var(--shadow-light);
   transition: all 0.2s ease;
   cursor: pointer;
+  position: relative;
 }
 
 .list_btn:hover,
@@ -132,21 +133,25 @@ hr {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-top: 1px solid #bec8ff;
+  border-right: 1px solid #bec8ff;
+  border-left: 1px solid #bec8ff;
+  width: 100%;
 }
 .add_task li button {
-  padding: 0.1rem 0.6rem;
-  background-color: #fff;
-  border: 2px solid var(--primary-color);
-  border-radius: 3px;
-  color: var(--primary-color);
+  padding: 0.1rem 0.7rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  background-color: transparent;
   cursor: pointer;
+  color: var(--primary-color);
 }
 .add_task li input {
-  padding: 0.2rem 0.3rem;
-  border-radius: 3px;
+  padding: 0.2rem;
+  width: 7rem;
   border: none;
-  outline: none;
   background-color: transparent;
+  outline: none;
 }
 
 .sidebar_progress_section .lists {
@@ -180,18 +185,34 @@ hr {
   padding: 0.7rem;
   border-radius: 7px;
 }
-.sidebar_progress_section .list_nested span button i {
+.sidebar_progress_section .list_nested button i {
   color: var(--secondary-color);
   font-size: 0.8rem;
 }
+
 .sidebar_progress_section .list_nested .list_nested_1 span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   width: 100%;
 }
-.sidebar_progress_section .list_nested .list_nested_1 span button {
+
+.sidebar_progress_section .list_nested .list_nested_1 .add_task_btn {
+  width: 100%;
   margin: 0.5rem;
   display: flex;
   width: 1.2rem;
   height: 1.2rem;
+}
+
+.sidebar_progress_section .list_nested .list_nested_1 .dlt_task_btn {
+  width: 100%;
+  margin: 0.5rem;
+  display: flex;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: red;
 }
 .sidebar_progress_section .list_nested .list_nested_1 div {
   display: flex;
@@ -207,12 +228,9 @@ hr {
   margin: 0;
   padding: 0;
 }
-.sidebar_progress_section .list_nested .list_nested_1 div li {
-  width: 100%;
-}
 
 .sidebar_progress_section .list_nested li:hover {
-  background-color: #fff;
+  background-color: #defcfa;
 }
 
 .sidebar_progress_section .show {
@@ -477,6 +495,7 @@ main {
 }
 
 .task_list {
+  margin: 0.5rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -485,6 +504,34 @@ main {
   border-radius: 8px;
   padding: 0.2rem 0.5rem;
   transition: transform 0.2s ease;
+}
+
+.task_list.dragging {
+  opacity: 0.5;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+
+.task_list.drag-over {
+  border-top: 2px solid var(--primary-color);
+}
+
+.task_list.drag-over-top {
+  border-top: 2px solid var(--primary-color);
+  margin-top: 40px;
+}
+
+.task_list.drag-over-bottom {
+  border-bottom: 2px solid var(--primary-color);
+  margin-bottom: 40px;
+}
+
+@media (hover: hover) {
+  .task_list:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .task_list:hover {
@@ -501,6 +548,50 @@ main {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.task-show {
+  display: block !important;
+}
+
+.task_list_img .user-task-log {
+  background-color: var(--primary-color);
+  display: none;
+  width: 4.6rem;
+  z-index: 999;
+  font-size: smaller;
+  position: absolute;
+  text-align: left;
+  left: -3.7rem;
+  border-radius: 0.4rem 0 0.4rem 0.4rem;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.task_list_img .user-task-log .user-task-opt {
+  list-style: none;
+  padding: 8px 6px;
+  border-bottom: 1px solid var(--light-text);
+}
+.task_list_img .user-task-log .user-task-opt:nth-child(4) {
+  border-bottom: none;
+}
+.task_list_img .user-task-log .user-task-opt .user-task-link {
+  color: #ffffff;
+  text-decoration: none;
+}
+.task_list_img .user-task-log .user-task-opt:hover {
+  background-color: white;
+  border: var(--primary-color);
+}
+.task_list_img .user-task-log .user-task-opt:hover:nth-child(1) {
+  border-radius: 5px 0 0 0;
+}
+
+.task_list_img .user-task-log .user-task-opt:hover:nth-child(4) {
+  border-radius: 0 0 5px 5pxs;
+}
+.task_list_img .user-task-log .user-task-opt:hover .user-task-link {
+  color: black;
 }
 
 .task_list img {
@@ -565,11 +656,53 @@ main {
   gap: 0.6rem;
 }
 .user_details button {
+  position: relative;
   border: none;
   padding: 0.2rem;
   border-radius: 50%;
 }
 
+.show-task {
+  display: inline-block !important;
+}
+.user_details .user-log {
+  background-color: var(--card-bg);
+  width: 7rem;
+  display: none;
+  position: absolute;
+  z-index: 999;
+  right: 0;
+  top: 1.3rem;
+  border-radius: 0.6rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  text-align: left;
+}
+.user_details .user-log li {
+  list-style: none;
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.5rem 0.4rem;
+}
+.user_details .user-log li:nth-child(5) {
+  border-bottom: none;
+}
+.user_details .user-log li:hover {
+  background-color: var(--primary-color);
+}
+.user_details .user-log li:nth-child(5):hover {
+  border-radius: 0 0 0.6rem 0.6rem;
+}
+
+.user_details .user-log li:nth-child(1):hover {
+  border-radius: 0.6rem 0.6rem 0 0;
+}
+.user_details .user-log li:hover a {
+  color: #ffffff;
+}
+.user_details .user-log li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: smaller;
+}
 .user_details i {
   color: var(--primary-color);
 }

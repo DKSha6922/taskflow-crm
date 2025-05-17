@@ -47,7 +47,7 @@
             role="navigation"
             aria-label="Project categories"
           >
-            <li id="lists" class="lists">
+            <li class="lists">
               <div class="dropdown_list">
                 <p>All Projects</p>
                 <i
@@ -60,18 +60,23 @@
                 <div class="list_nested_1">
                   <span>
                     <button
-                      id="add_task_btn"
-                      class="btn"
+                      class="btn add_task_btn"
                       aria-label="Add new project"
                     >
                       <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    </button>
+                    <button
+                      class="btn dlt_task_btn"
+                      aria-label="Delete a project"
+                    >
+                      <i class="fa-solid fa-xmark"></i>
                     </button>
                   </span>
                   <div class="add_task"></div>
                 </div>
               </ul>
             </li>
-            <li id="lists" class="lists">
+            <li class="lists">
               <div class="dropdown_list">
                 <i class="no_bg fa-solid fa-toggle-off" aria-hidden="true"></i>
                 Not Started
@@ -85,18 +90,23 @@
                 <div class="list_nested_1">
                   <span>
                     <button
-                      id="add_task_btn"
-                      class="btn"
+                      class="btn add_task_btn"
                       aria-label="Add new project"
                     >
                       <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    </button>
+                    <button
+                      class="btn dlt_task_btn"
+                      aria-label="Delete a project"
+                    >
+                      <i class="fa-solid fa-xmark"></i>
                     </button>
                   </span>
                   <div class="add_task"></div>
                 </div>
               </ul>
             </li>
-            <li id="lists" class="lists">
+            <li class="lists">
               <div class="dropdown_list">
                 <i class="no_bg fa-solid fa-toggle-on" aria-hidden="true"></i>In
                 Progress
@@ -110,18 +120,23 @@
                 <div class="list_nested_1">
                   <span>
                     <button
-                      id="add_task_btn"
-                      class="btn"
+                      class="btn add_task_btn"
                       aria-label="Add new project"
                     >
                       <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    </button>
+                    <button
+                      class="btn dlt_task_btn"
+                      aria-label="Delete a project"
+                    >
+                      <i class="fa-solid fa-xmark"></i>
                     </button>
                   </span>
                   <div class="add_task"></div>
                 </div>
               </ul>
             </li>
-            <li id="lists" class="lists">
+            <li class="lists">
               <div class="dropdown_list">
                 <i
                   class="no_bg fa-solid fa-arrow-trend-down"
@@ -138,18 +153,23 @@
                 <div class="list_nested_1">
                   <span>
                     <button
-                      id="add_task_btn"
-                      class="btn"
+                      class="btn add_task_btn"
                       aria-label="Add new project"
                     >
                       <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    </button>
+                    <button
+                      class="btn dlt_task_btn"
+                      aria-label="Delete a project"
+                    >
+                      <i class="fa-solid fa-xmark"></i>
                     </button>
                   </span>
                   <div class="add_task"></div>
                 </div>
               </ul>
             </li>
-            <li id="lists" class="lists">
+            <li class="lists">
               <div class="dropdown_list">
                 <i
                   class="no_bg fa-regular fa-circle-check"
@@ -166,11 +186,16 @@
                 <div class="list_nested_1">
                   <span>
                     <button
-                      id="add_task_btn"
-                      class="btn"
+                      class="btn add_task_btn"
                       aria-label="Add new project"
                     >
                       <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    </button>
+                    <button
+                      class="btn dlt_task_btn"
+                      aria-label="Delete a project"
+                    >
+                      <i class="fa-solid fa-xmark"></i>
                     </button>
                   </span>
                   <div class="add_task"></div>
@@ -270,155 +295,16 @@
           <header class="task_list_header_section">
             <div class="task_list_withbtn">
               <h2>Task List</h2>
-              <button class="btn" aria-label="Add new task">
+              <button id="add_task_list" class="btn" aria-label="Add new task">
                 <i class="fa-solid fa-plus" aria-hidden="true"></i>
               </button>
             </div>
-            <div class="img_section">
-              <img
-                class="img_1"
-                src="public/img/avatar1.jpg"
-                alt="Team member avatar 1"
-                width="40"
-                height="40"
-              />
-              <img
-                class="img_1"
-                src="public/img/avatar2.jpg"
-                alt="Team member avatar 2"
-                width="40"
-                height="40"
-              />
-              <img
-                class="img_1"
-                src="public/img/avatar3.jpg"
-                alt="Team member avatar 3"
-                width="40"
-                height="40"
-              />
-              <img
-                class="img_1"
-                src="public/img/avatar4.jpg"
-                alt="Team member avatar 4"
-                width="40"
-                height="40"
-              />
-            </div>
+            <div id="main-img-section" class="img_section"></div>
             <p>200 Elements</p>
-            <!-- <button class="list_btn" aria-label="Change view mode">
-              <i class="fa-solid fa-bars" aria-hidden="true"></i>
-            </button> -->
           </header>
 
           <!-- Task list items -->
-          <article class="task_list" aria-labelledby="task1">
-            <div class="task_list_desc">
-              <input type="radio" name="task-select" id="task1" />
-              <h3 id="task1">Request server username & password</h3>
-            </div>
-            <div class="task_list_img">
-              <p class="task-status">In progress</p>
-              <time datetime="PT2H54M">02:54</time>
-              <img
-                class="img_1"
-                src="public/img/avatar1.jpg"
-                alt="Task assignee avatar"
-                width="40"
-                height="40"
-              />
-              <button class="list_btn" aria-label="Task options">
-                <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
-              </button>
-            </div>
-          </article>
-
-          <article class="task_list" aria-labelledby="task2">
-            <div class="task_list_desc">
-              <input type="radio" name="task-select" id="task2" />
-              <h3 id="task2">Configure database settings</h3>
-            </div>
-
-            <div class="task_list_img">
-              <p class="task-status">In progress</p>
-              <time datetime="PT2H54M">02:54</time>
-              <img
-                class="img_1"
-                src="public/img/avatar1.jpg"
-                alt="Task assignee avatar"
-                width="40"
-                height="40"
-              />
-              <button class="list_btn" aria-label="Task options">
-                <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
-              </button>
-            </div>
-          </article>
-
-          <article class="task_list" aria-labelledby="task3">
-            <div class="task_list_desc">
-              <input type="radio" name="task-select" id="task3" />
-              <h3 id="task3">Implement user authentication</h3>
-            </div>
-
-            <div class="task_list_img">
-              <p class="task-status">In progress</p>
-              <time datetime="PT2H54M">02:54</time>
-              <img
-                class="img_1"
-                src="public/img/avatar1.jpg"
-                alt="Task assignee avatar"
-                width="40"
-                height="40"
-              />
-              <button class="list_btn" aria-label="Task options">
-                <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
-              </button>
-            </div>
-          </article>
-
-          <article class="task_list" aria-labelledby="task4">
-            <div class="task_list_desc">
-              <input type="radio" name="task-select" id="task4" />
-              <h3 id="task4">Design dashboard interface</h3>
-            </div>
-
-            <div class="task_list_img">
-              <p class="task-status">In progress</p>
-              <time datetime="PT2H54M">02:54</time>
-              <img
-                class="img_1"
-                src="public/img/avatar1.jpg"
-                alt="Task assignee avatar"
-                width="40"
-                height="40"
-              />
-              <button class="list_btn" aria-label="Task options">
-                <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
-              </button>
-            </div>
-          </article>
-
-          <article class="task_list" aria-labelledby="task5">
-            <div class="task_list_desc">
-              <input type="radio" name="task-select" id="task5" />
-              <h3 id="task5">Write API documentation</h3>
-            </div>
-
-            <div class="task_list_img">
-              <p class="task-status">In progress</p>
-              <time datetime="PT2H54M">02:54</time>
-              <img
-                class="img_1"
-                src="public/img/avatar1.jpg"
-                alt="Task assignee avatar"
-                width="40"
-                height="40"
-              />
-              <button class="list_btn" aria-label="Task options">
-                <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
-              </button>
-            </div>
-          </article>
+          <div id="task_lists_items"></div>
         </section>
 
         <hr />
@@ -428,33 +314,54 @@
       <aside class="task_section" aria-label="Task details">
         <div class="task_section_1">
           <section class="user_timer">
-            <button class="btn" aria-label="Pause timer">
-              <i class="fa-solid fa-pause" aria-hidden="true"></i>
+            <button
+              id="time-pause-and-play"
+              class="btn"
+              aria-label="Pause timer"
+            >
+              <i id="play-icon" class="fa-solid fa-play" aria-hidden="true"></i>
             </button>
-            <span>01:34</span>
+            <span id="tracking-time">00:00</span>
 
             <section class="user_details">
               <div class="profile">
                 <img
-                  src="./public/img/avatar3.jpg"
+                  src="./public/img/avatar.jpg"
                   alt="Kolin Francis profile picture"
                   width="40"
                   height="40"
                 />
                 <div>
                   <p>User</p>
-                  <h5>Kolin Francis</h5>
+                  <h5>Guest</h5>
                 </div>
               </div>
-              <button>
+              <button id="user-information-btn">
                 <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul id="user-log" class="user-log">
+                  <li>
+                    <a href="#">Profile Settings</a>
+                  </li>
+                  <li>
+                    <a href="#">My Progress</a>
+                  </li>
+                  <li>
+                    <a href="#">Upgrade Plan</a>
+                  </li>
+                  <li>
+                    <a href="#">Sign In</a>
+                  </li>
+                  <li>
+                    <a href="#">Sign Up</a>
+                  </li>
+                </ul>
               </button>
             </section>
           </section>
 
           <section class="User_time_tracking">
             <h5>Time Tracking</h5>
-            <button>
+            <button id="hide-tracking-display">
               Hide Window<i
                 class="fa-solid fa-chevron-right"
                 aria-hidden="true"
@@ -462,7 +369,7 @@
             </button>
           </section>
 
-          <section class="time_tracking_display">
+          <section id="time-tracking-display" class="time_tracking_display">
             <span>Tracking Time</span>
             <div class="task_display">
               <p class="task_num">Task:#32</p>
@@ -492,7 +399,7 @@
             <div class="user_detail">
               <div class="user1">
                 <img
-                  src="/public/img/avatar4.jpg"
+                  src="/public/img/avatar.jpg"
                   alt="Team member profile picture"
                   width="40"
                   height="40"
@@ -500,16 +407,16 @@
 
                 <div>
                   <p>User</p>
-                  <h6>Kolin Francis</h6>
+                  <h6>Guest</h6>
                 </div>
               </div>
               <div class="user2 user1">
                 <div>
                   <p>User</p>
-                  <h6>Kolin Francis</h6>
+                  <h6>Guest</h6>
                 </div>
                 <img
-                  src="public/img/avatar3.jpg"
+                  src="public/img/avatar.jpg"
                   alt="Team member profile picture"
                   width="40"
                   height="40"
